@@ -13,7 +13,7 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("com/company/images/P_20170124_135151_HDR.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
