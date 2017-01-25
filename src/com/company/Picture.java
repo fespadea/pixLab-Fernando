@@ -29,9 +29,47 @@ public class Picture extends SimplePicture
      */
     super();  
   }
-  
+  public void keepBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(255-pixelObj.getRed());
+        pixelObj.setGreen(255-pixelObj.getGreen());
+        pixelObj.setBlue(255-pixelObj.getBlue());
+      }
+    }
+  }
+  public void gray()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int pi = (pixelObj.getRed() + pixelObj.getGreen()+pixelObj.getBlue())/3;
+        pixelObj.setRed(pi);
+        pixelObj.setGreen(pi);
+        pixelObj.setBlue(pi);
+      }
+    }
+  }
   /**
-   * Constructor that takes a file name and creates the picture 
+   * Constructor that takes a file name and creates the picture
    * @param fileName the name of the file to create the picture from
    */
   public Picture(String fileName)
@@ -225,7 +263,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("IMG_4762.JPG");
     beach.explore();
     beach.zeroBlue();
     beach.explore();

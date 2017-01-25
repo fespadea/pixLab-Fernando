@@ -13,16 +13,36 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("com/company/images/P_20170124_135151_HDR.jpg");
+    Picture beach = new Picture("IMG_4762.JPG");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
   }
-  
+  public static void keepOnlyBlue ()
+  {
+    Picture beach = new Picture("IMG_4762.JPG");
+    beach.explore();
+    beach.keepBlue();
+    beach.explore();
+  }
+  public static void negate()
+  {
+    Picture beach = new Picture("IMG_4762.JPG");
+    beach.explore();
+    beach.negate();
+    beach.explore();
+  }
+  public static void grayer()
+  {
+    Picture beach = new Picture("IMG_4762.JPG");
+    beach.explore();
+    beach.gray();
+    beach.explore();
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("IMG_4762.JPG");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -31,7 +51,7 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("IMG_4762.JPG");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -40,7 +60,7 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("IMG_4762.JPG");
     canvas.createCollage();
     canvas.explore();
   }
@@ -48,7 +68,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("IMG_4762.JPG");
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -60,7 +80,10 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
+    //keepOnlyBlue();
+    //negate();
+    grayer();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
