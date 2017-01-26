@@ -22,6 +22,28 @@ public class Picture extends SimplePicture
   /**
    * Constructor that takes no arguments 
    */
+  public void edge(int edgeDist)
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0;
+           col < pixels[0].length-1; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+        rightColor = rightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) >
+                edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
   public Picture ()
   {
     /* not needed but use it to show students the implicit call to super()
@@ -38,6 +60,17 @@ public class Picture extends SimplePicture
       {
         pixelObj.setRed(0);
         pixelObj.setGreen(0);
+      }
+    }
+  }
+  public void fish()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(pixelObj.getRed()+200);
       }
     }
   }

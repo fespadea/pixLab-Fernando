@@ -11,6 +11,12 @@ package com.company;
 public class PictureTester
 {
   /** Method to test zeroBlue */
+  public static void edges(){
+    Picture beach = new Picture("IMG_4762.JPG");
+    beach.explore();
+    beach.edge(5);
+    beach.explore();
+  }
   public static void testZeroBlue()
   {
     Picture beach = new Picture("IMG_4762.JPG");
@@ -37,6 +43,13 @@ public class PictureTester
     Picture beach = new Picture("IMG_4762.JPG");
     beach.explore();
     beach.gray();
+    beach.explore();
+  }
+  public static void seeFish ()
+  {
+    Picture beach = new Picture("water.jpg");
+    beach.explore();
+    beach.fish();
     beach.explore();
   }
   /** Method to test mirrorVertical */
@@ -80,10 +93,12 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+    edges();
     //testZeroBlue();
     //keepOnlyBlue();
     //negate();
-    grayer();
+    //grayer();
+    //seeFish();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
